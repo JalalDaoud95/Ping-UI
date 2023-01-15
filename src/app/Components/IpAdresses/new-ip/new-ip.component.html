@@ -1,0 +1,28 @@
+<div class="container my-5">
+    <h2 class = "mb-3">Add New  Ip</h2>
+    <div class="row">
+        <div class="col-2">
+            <form #form = "ngForm" (submit)="AddIp()">
+                <div class="mb-3">
+                  <label for="Addid" class="form-label">ID</label>
+                  <input type="number" class="form-control" id="Addid" 
+                  name="Id" [(ngModel)] = "AddNewIp.id" >
+                </div>
+                <div class="mb-3">
+                  <label for="Addip" class="form-label">Ip address</label>
+                  <input type="text" class="form-control" id="Addip" 
+                  name="Ip" [(ngModel)] = "AddNewIp.newIp" >
+                </div>
+                <div class="mb-3">
+                  <label for="Adddesc" class="form-label">Desc</label>
+                  <input type="text" class="form-control" id="Adddesc" 
+                  name="Desc" [(ngModel)] = "AddNewIp.ipDesc" >
+                </div>
+                     
+                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="button" class="btn btn-danger" (click)="DeleteIp(AddNewIp.id)">Delete</button>
+              </form>
+        </div>
+    </div>        
+    
+       

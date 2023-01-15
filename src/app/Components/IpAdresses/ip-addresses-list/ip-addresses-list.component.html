@@ -1,0 +1,52 @@
+<<!-- form [formGroup]="form" (ngSubmit)="submitIp()">
+    <div>
+      <button (click)="addNewAddressGroup()" style="background-color: orange">
+        Add
+      </button>
+    </div>
+  
+    <div
+      *ngFor="let addressGroup of form.get('address').controls; let i = index"
+      [formGroup]="addressGroup"
+    >
+      form No : {{ i }}
+      <div>IP Address <input formControlName="ipAddress" /></div>
+  
+      <button (click)="deleteAddressGroup(i)" style="background-color: red">
+        Delete - {{ i }}
+      </button>
+    </div>
+  </form>
+  <button style="color: black; background-color: cyan">Submit Form</button>
+  <br />
+  <br />
+  <br />
+  <br />
+  result <br />
+  
+  <pre
+    >{{ form.value | json }}
+  </pre>
+   -->
+<div class="container my-5">
+    <h1 class="mb-3"> IpAddresses</h1>
+    <table class="table" *ngIf="iptoping && iptoping.length > 0 ">
+        <thead>
+            <tr>
+                 <th>Id</th>
+                <th>IpAddress</th>
+                <th>Response</th>              
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ip of iptoping">
+                <td>{{ip.id}}</td>
+                <td>{{ip.ipAdd}}</td>
+                <td>{{ip.pingstatus}}</td>
+            </tr>
+
+        </tbody>
+    </table>\
+    <p *ngIf="!iptoping || iptoping.length <= 0">No IpAddress To Ping</p>
+   
+</div>

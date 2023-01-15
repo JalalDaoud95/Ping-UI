@@ -1,0 +1,22 @@
+<div class="container my-5">
+    <h1 class="mb-3"> IpAddresses</h1>
+    <table class="table" *ngIf="pingedIp && pingedIp.length > 0 ">
+        <thead>
+            <tr>
+                 <th>Id</th>
+                <th>IpAddress</th>
+                <th>Response</th>              
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ip of pingedIp">
+                <td>{{ip.id}}</td>
+                <td>{{ip.ipAdd}}</td>
+                <td>{{ip.pingstatus}}</td>
+            </tr>
+
+        </tbody>
+    </table>\
+    <p *ngIf="!pingedIp || pingedIp.length <= 0">No IpAddress To Ping</p>
+   
+</div>
